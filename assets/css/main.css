@@ -1366,91 +1366,57 @@ footer .content p span{
     }
 }
 
-.pricing{
-    text-align:center;
-}
-
-.pricing-container{
-    display:flex;
-    justify-content:center;
-    padding:2rem 0;
-}
-
-.pricing-box{
-    max-width:50rem;
-    background:#222;
-    padding:4rem 3rem;
-    border-radius:.5rem;
-    border:1px solid rgba(255,255,255,0.2);
-}
-
-.pricing-box h3{
-    font-size:2rem;
-    color:var(--white);
-    margin-bottom:1rem;
-}
-
-.price{
-    font-size:5rem;
-    color:var(--purple);
-    margin-bottom:1.5rem;
-}
-
-.price span{
-    font-size:2rem;
-}
-
-.pricing-text{
-    font-size:1.6rem;
-    color:var(--grey);
-    line-height:1.6;
-    margin-bottom:2rem;
-}
-
-.pricing-features{
-    list-style:none;
-    margin-bottom:2rem;
-}
-
-.pricing-features li{
-    font-size:1.6rem;
-    color:var(--white);
-    padding:.5rem 0;
-}
-
-.pricing-box .btn{
-    margin-top:1rem;
-}
 .pricing-highlight{
-    background: linear-gradient(135deg, #111, #1b1b1b);
-    padding: 6rem 5%;
+    padding: 8rem 5%;
+    background: linear-gradient(180deg, #f7f2f0 0%, #f3ece9 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-highlight-inner{
+    width: 100%;
+    max-width: 110rem;
     text-align: center;
+    padding: 2rem 1rem;
 }
 
-.pricing-container{
-    max-width: 900px;
-    margin: auto;
-}
-
-.pricing-text h2{
-    font-size: 2.4rem;
-    color: var(--grey);
+.pricing-eyebrow{
+    font-size: 1.4rem;
+    letter-spacing: 0.22rem;
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.pricing-text h1{
+.pricing-highlight h2{
+    font-size: 4.6rem;
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.pricing-amount{
     font-size: 6rem;
-    color: var(--purple);
-    margin-bottom: 2rem;
+    color: var(--main-dark);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.pricing-text p{
-    font-size: 1.7rem;
-    color: var(--white);
-    max-width: 700px;
-    margin: auto;
-    margin-bottom: 3rem;
-    line-height: 1.6;
+.pricing-description{
+    max-width: 82rem;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: var(--text-light);
 }
 
-
+.pricing-highlight .btn{
+    min-width: 28rem;
+    text-align: center;
+}
