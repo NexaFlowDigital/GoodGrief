@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title -->
-    <title>Erika Cowan | Professional Portfolio</title>
+    <title>Good Grief Home Organization Co.</title>
 
     <!-- Font-Awesome CSS -->
     <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css" />
@@ -19,12 +18,170 @@
     <link rel="stylesheet" href="assets/vendors/magnific-popup/magnific-popup.css" />
 
     <!-- Custom Stylesheets -->
-    <link rel="stylesheet"  href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <!-- Temporary brand styling until CSS is updated -->
+    <style>
+        :root{
+            --main-color:#b99395;
+            --secondary-color:#d9e6f7;
+            --accent-color:#f6f1ed;
+            --dark-color:#6f5658;
+            --light-bg:#f8f5f3;
+            --white:#ffffff;
+            --black:#2f2526;
+            --border:rgba(111,86,88,.15);
+            --box-shadow:0 0.5rem 1.5rem rgba(111,86,88,.10);
+        }
+
+        body{
+            background: var(--light-bg);
+        }
+
+        .header{
+            background: rgba(248,245,243,.95);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo h2{
+            color: var(--dark-color);
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+
+        .logo h2 span{
+            display:block;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: .2rem;
+            text-transform: uppercase;
+            margin-top: .2rem;
+        }
+
+        .home{
+            background: linear-gradient(rgba(185,147,149,.15), rgba(217,230,247,.18));
+        }
+
+        .home .image img,
+        .about .image img,
+        .portfolio-item img{
+            border-radius: 1.2rem;
+        }
+
+        .section-note,
+        .pricing-note,
+        .faq-note{
+            max-width: 75rem;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .pricing-grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            gap:2rem;
+        }
+
+        .pricing-card,
+        .faq-card,
+        .contact-info,
+        .contact-form,
+        .service-item,
+        .portfolio-item,
+        .about .content{
+            background: var(--white);
+            border: .1rem solid var(--border);
+            box-shadow: var(--box-shadow);
+            border-radius: 1.2rem;
+        }
+
+        .pricing-card{
+            padding:3rem 2.5rem;
+        }
+
+        .pricing-card h3{
+            margin-bottom: 1rem;
+        }
+
+        .price{
+            font-size: 3.2rem;
+            color: var(--main-color);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .pricing-card ul,
+        .faq-card ul{
+            padding-left: 1.8rem;
+        }
+
+        .pricing-card ul li,
+        .faq-card ul li{
+            margin-bottom: .8rem;
+            font-size: 1.5rem;
+            color: var(--black);
+            line-height: 1.7;
+        }
+
+        .faq-grid{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+            gap:2rem;
+        }
+
+        .faq-card{
+            padding:3rem 2.5rem;
+        }
+
+        .faq-card h3{
+            margin-bottom: 1rem;
+        }
+
+        .contact .box-container{
+            align-items: stretch;
+        }
+
+        .contact-form .checkbox-group{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap:1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form .checkbox-group label{
+            font-size:1.4rem;
+            color:var(--black);
+            display:flex;
+            align-items:center;
+            gap:.8rem;
+        }
+
+        .contact-form .helper-text{
+            font-size:1.3rem;
+            color:#666;
+            margin: .5rem 0 1.5rem;
+            line-height:1.6;
+        }
+
+        .contact-form .form-title{
+            font-size:1.7rem;
+            color:var(--dark-color);
+            margin:1rem 0;
+            font-weight:600;
+        }
+
+        .social a{
+            color: var(--dark-color);
+        }
+
+        footer{
+            background: #efe5e2;
+        }
+    </style>
 
 </head>
 <body>
-
 
     <!-------------------- Scroll-Top Area (Start) -------------------->
     <a href="#home" class="scroll-top">
@@ -32,15 +189,13 @@
     </a>
     <!-------------------- Scroll-Top Area (End) -------------------->
 
-        
 
     <!-------------------- Header Area (Start) -------------------->
     <header class="header">
 
         <!-- Logo -->
         <a class="logo" href="#home">
-            <h2> Erika Cowan </h2> 
-            <!-- <img src="assets/images/logo.png" alt="logo" /> -->
+            <h2>Good Grief <span>Home Organization Co.</span></h2>
         </a>
         <!-- Logo End -->
 
@@ -48,17 +203,18 @@
         <nav class="navbar">
             <a href="#home">home</a>
             <a href="#about">about</a>
-            <a href="#service">expertise</a>
-            <a href="#portfolio">projects</a>
+            <a href="#service">services</a>
+            <a href="#portfolio">who we help</a>
+            <a href="#pricing">pricing</a>
+            <a href="#faq">faq</a>
             <a href="#contact">contact</a>
         </nav>
 
         <!-- Menubar -->
         <div class="fas fa-bars" id="menu-btn"></div>
-        
+
     </header>
     <!-------------------- Header Area (End) -------------------->
- 
 
 
     <!-------------------- Home Area (Start) -------------------->
@@ -68,23 +224,24 @@
 
             <div class="content">
                 <div class="text">
-                    <h2>hi there!</h1>
-                    <h1>I Am an <span class="typing-text"></span></h1>
-                    <p>Technology-driven education leader leveraging data and digital solutions to empower educators and transform K-12 learning environments.</p>
-                    <a href="#about" class="btn">about me <i class="fas fa-user"></i></a>
+                    <h2>Welcome</h2>
+                    <h1>From Good to Grief <span class="typing-text"></span></h1>
+                    <p>
+                        Gentle home support for people navigating grief, life transitions,
+                        and overwhelming seasons. We help you sort through it all—literally.
+                    </p>
+                    <a href="#contact" class="btn">start here <i class="fas fa-heart"></i></a>
                 </div>
             </div>
-    
+
             <div class="image">
-                <img src="assets/images/Home/Home-Image.png" alt="Home-Image">
+                <img src="assets/images/Home/good-grief-home-placeholder.jpg" alt="Placeholder image for Good Grief Home Organization Co.">
             </div>
 
         </div>
 
     </section>
-
     <!-------------------- Home Area (End) -------------------->
-
 
 
     <!-------------------- About Area (Start) -------------------->
@@ -94,694 +251,422 @@
 
             <div class="content">
 
-                <h2>My name is Erika Cowan.</h2>
-                <p>I am an instructional technology leader passionate about leveraging digital systems to enhance teaching, learning, and school operations. I align technology with instructional goals to help educators work more efficiently and support student success. With experience leading cross-functional projects and coaching teams, I focus on optimizing platforms for data-driven decision-making. I’m known for improving system efficiency, enabling scalable automation, and driving strategic initiatives that help K-12 schools thrive.</p>
-   
+                <h2>Support for the seasons that feel heavy.</h2>
+                <p>
+                    When life changes, our homes often feel it first. Belongings pile up.
+                    Decision-making feels heavy. Emotional attachments can make it hard to
+                    know what stays and what goes. Good Grief Home Organization Co. exists
+                    to offer calm, hands-on support with no judgment, no rushing, and no
+                    pressure.
+                </p>
+
                 <div class="about-info">
 
-    <div class="info">
-        <h4>Location: <span>Frisco, TX</span></h4>
-        <h4>Role: <span>Instructional Technology Leader</span></h4>
-        <h4>Certifications: <span>Texas Educator 6-12, Google Trainer, Microsoft Office Specialist</span></h4>
-        <h4>Technical Expertise: <span>Automation, SIS Integration, LMS Implementation</span></h4>
-        <h4>Specialties: <span>Data-driven Instruction, Workflow Optimization</span></h4>
-        <a href="assets/Erika_Cowan_Resume_ATS.pdf" class="btn">Download Resume <i class="fas fa-download"></i></a>
-    </div>
+                    <div class="info">
+                        <h4>Serving: <span>Lake Cities and surrounding areas</span></h4>
+                        <h4>Approach: <span>Grief-informed, trauma-aware, and client-led</span></h4>
+                        <h4>Support Style: <span>Work side-by-side or independently with your guidance</span></h4>
+                        <h4>Focus: <span>Decluttering, organizing, sentimental sorting, and life transitions</span></h4>
+                        <h4>Travel: <span>Additional travel available for an added fee</span></h4>
+                        <a href="#contact" class="btn">begin your intake <i class="fas fa-envelope"></i></a>
+                    </div>
 
-    <div class="counting">
+                    <div class="counting">
 
-        <div class="box">
-            <h1 class="count" data-count="73">73+</h1>
-            <h3>District administrators empowered with scalable tech solutions</h3>
-        </div>
+                        <div class="box">
+                            <h1>1</h1>
+                            <h3>gentle first step to getting support</h3>
+                        </div>
 
-        <div class="box">
-            <h1 class="count" data-count="100">100+</h1>
-            <h3>Schools transformed with scalable technology solutions</h3>
-        </div>
+                        <div class="box">
+                            <h1>0</h1>
+                            <h3>judgment, pressure, or “just get rid of it” energy</h3>
+                        </div>
 
-        <div class="box">
-            <h1 class="count" data-count="172">172+</h1>
-            <h3>School administrators coached on data-driven practices</h3>
-        </div>
+                        <div class="box">
+                            <h1>100%</h1>
+                            <h3>client-led decisions about your belongings</h3>
+                        </div>
 
-        <div class="box">
-            <h1 class="count" data-count="160000">160,000+</h1>
-            <h3>Hours of instructional time reclaimed per school year through automation</h3>
-        </div>
+                        <div class="box">
+                            <h1>1 goal</h1>
+                            <h3>help create calm, order, and room to breathe again</h3>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
-</section>
+                </div>
 
-<!-- jQuery first, then your counter-up script -->
-<script src="assets/vendors/jquery/jquery-3.6.0.js"></script>
-<script src="assets/js/counter-up.js"></script>
-</body>
-</html>
-                
             </div>
-            
+
         </div>
 
         <div class="skill-container">
 
             <div class="heading">
-                <h2>my <span>skills</span></h2>
+                <h2>why clients choose <span>good grief</span></h2>
             </div>
-    
+
             <div class="skills">
                 <div class="skill-item item1">
                     <div class="box">
-                        <h3>LMS & SIS Integration<span> 95% </span> </h3>
+                        <h3>Compassionate Support<span> at your pace </span></h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                     <div class="box">
-                        <h3>Automation & Workflow Design<span> 90% </span> </h3>
+                        <h3>Decision Guidance<span> without pressure </span> </h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                     <div class="box">
-                        <h3>SQL & Database Reporting<span> 85% </span> </h3>
+                        <h3>Sentimental Sorting<span> with care </span> </h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                 </div>
-    
+
                 <div class="skill-item item2">
                     <div class="box">
-                        <h3>Dashboard & Data Visualization<span> 80% </span> </h3>
+                        <h3>Functional Organization<span> for real life </span> </h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                     <div class="box">
-                        <h3>Scripting & API Integrations<span> 75% </span> </h3>
+                        <h3>Donation Coordination<span> when needed </span> </h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                     <div class="box">
-                        <h3>Systems Administration & IT Support<span> 70% </span> </h3>
+                        <h3>Confidential Service<span> always respected </span> </h3>
                         <div class="progress-bar"> <span></span> </div>
                     </div>
                 </div>
-    
             </div>
-    
+
         </div>
 
     </section>
-
-
-
-<!-- Qualification Area (Start) -->
-<section class="qualification">
-
-    <div class="heading">
-      <h2>my <span>education</span></h2>
-    </div>
-  
-    <div class="box-container">
-  
-      <!-- Education Column -->
-      <div class="education">
-  
-        <div class="experience-item">
-          <i class="fas fa-graduation-cap"></i>
-          <div class="content">
-            <span>2021 – Aug 2024</span>
-            <h3>Master of Teaching, Leadership &amp; Collaboration</h3>
-            <p>Texas Woman’s University, 4.0 GPA</p>
-          </div>
-        </div>
-  
-        <div class="experience-item">
-          <i class="fas fa-graduation-cap"></i>
-          <div class="content">
-            <span>2017 – Dec 2019</span>
-            <h3>Bachelor of Science in Accounting</h3>
-            <p>Franklin University, 3.81 GPA, Magna Cum Laude</p>
-          </div>
-        </div>
-  
-        <div class="experience-item">
-          <i class="fas fa-graduation-cap"></i>
-          <div class="content">
-            <span>2018</span>
-            <h3>Technical Certificate in Business Administration</h3>
-            <p>Franklin University</p>
-          </div>
-        </div>
-  
-      </div><!-- /.education -->
-  
-    </div><!-- /.box-container -->
-  
-  </section>
-  <!-- Qualification Area (End) -->
-  
-  <!-- Experience Area (Start) -->
-  <section class="qualification">
-    <div class="heading">
-      <h2>my <span>experience</span></h2>
-    </div>
-  
-    <div class="experience">
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>Jul 2024 – Present</span>
-          <h3>Educator, Lewisville High School Killough</h3>
-          <p>
-            Lead CTE instruction in business, marketing, and technology. Designed and implemented automated systems for grading, progress tracking, and certification readiness. Mentored new teachers through full curriculum design and LMS implementation. Drove campus-wide digital learning initiatives and professional development focused on system efficiency, data use, and workforce-aligned instruction.
-          </p>
-          <ul class="experience-list">
-            <li>Increased grading efficiency by 25% through Canvas automation</li>
-            <li>Achieved a 91.2% industry certification pass rate across all courses</li>
-            <li>Enhanced student progress tracking with custom dashboards, improving timely interventions</li>
-            <li>Strengthened school-community communication via a branded, automated team website</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>Jul 2023 – Jul 2024</span>
-          <h3>Educator/TATF Liaison, Gilbreath-Reed Career &amp; Technical Center</h3>
-          <p>
-            Led dual-credit Accounting & Finance instruction while supporting district-wide SIS automation and staff training. Designed systems to streamline student data workflows, reduce administrative burden, and improve reporting accuracy. Trained educators on compliance protocols and digital practices to drive operational efficiency and student outcomes.
-          </p>
-          <ul class="experience-list">
-            <li>Earned Outstanding Educator award; ranked #2 in Texas at the 2024 Microsoft Office Specialist U.S. Championship</li>
-            <li>Reduced SIS errors and improved attendance by 40% through a custom database solution</li>
-            <li>Increased student data processing efficiency by 30% via automated workflows</li>
-            <li>Developed reusable SIS support materials to accelerate onboarding and ensure data quality</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>May 2022 – Jul 2023</span>
-          <h3>Analyst/Programmer, Irving Independent School District</h3>
-          <p>
-            Served as a district-wide systems programmer and report writer, supporting HR, Finance, and Student Information Systems. Designed and deployed custom integrations, data pipelines, and automated workflows across Munis, eSchoolPlus, Cognos, and other core platforms to ensure real-time access and data integrity.
-          </p>
-          <ul class="experience-list">
-            <li>Automated HR and finance reporting tasks, reducing turnaround time by 35%</li>
-            <li>Replaced manual entry processes with SQL-based reports, cutting errors and effort by 50%</li>
-            <li>Enhanced reporting infrastructure, increasing load speed by 60% and improving audit readiness</li>
-            <li>Resolved data discrepancies affecting PEIMS and TSDS submissions, ensuring 100% on-time compliance</li>
-            <li>Standardized executive reporting templates, saving over 10 hours per month in manual prep</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>Sep 2020 – May 2022</span>
-          <h3>Educator, Irving High School</h3>
-          <p>
-            Led business and technology pathways through project-based learning and certification preparation. Drove instructional innovation by developing automated grading, attendance, and certification-tracking systems. Built tools to improve CCMR data accuracy and reduce manual reporting.
-          </p>
-          <ul class="experience-list">
-            <li>Achieved a 90% industry certification pass rate across all courses</li>
-            <li>Automated certification uploads, reducing manual entry by 80%</li>
-            <li>Built a scannable attendance system, increasing accuracy and cutting admin time by 50%</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>Feb 2020 – Sep 2020</span>
-          <h3>Property Accountant &amp; SAP Systems Administrator, Fleur De Lis Energy, LLC</h3>
-          <p>
-            Managed SAP financial systems supporting revenue accounting, asset integration, and data governance for over 20,000 ownership records. Built automation tools to streamline reporting and reduce manual labor.
-          </p>
-          <ul class="experience-list">
-            <li>Integrated a $1B asset into SAP within 90 days with zero disruption to financial operations</li>
-            <li>Automated internal reporting, improving efficiency by 40% and reducing errors by 20%</li>
-            <li>Reduced monthly close cycle by 25% through optimized data workflows</li>
-            <li>Developed ACH/W9 tracking system in SAP, saving $100K+ annually in labor costs</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="experience-item">
-        <i class="fas fa-briefcase"></i>
-        <div class="content">
-          <span>Mar 2018 – Feb 2020</span>
-          <h3>Staff Accountant, Maverick Fitness</h3>
-          <p>
-            Oversaw accounting operations and system setup during regional expansion of Orangetheory Fitness studios. Configured financial systems to support multi-entity operations and built scalable workflows to reduce processing time.
-          </p>
-          <ul class="experience-list">
-            <li>Integrated 30+ new studio entities into accounting systems, enabling centralized reporting and eliminating reconciliation delays</li>
-            <li>Automated journal entries and AP processes, cutting monthly processing time by 40%</li>
-            <li>Reduced posting errors by 60% through system enhancements</li>
-            <li>Accelerated month-end close cycle by 3 days with improved data visibility</li>
-          </ul>
-        </div>
-      </div>
-  
-    </div><!-- /.experience -->
-  
-  </section>
-  <!-- Experience Area (End) -->
-
+    <!-------------------- About Area (End) -------------------->
 
 
     <!-------------------- Services Area (Start) -------------------->
     <section class="service" id="service">
 
         <div class="heading">
-            <h2>my <span>Expertise</span></h2>
+            <h2>how we can <span>help</span></h2>
         </div>
 
         <div class="box-container">
 
             <div class="service-item">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>Educational Leadership</h3>
-                <p>Lead the design and implementation of tech-integrated instructional strategies that increase engagement, support curriculum goals, and improve student outcomes.</p>
+                <i class="fas fa-home"></i>
+                <h3>Gentle Decluttering</h3>
+                <p>Hands-on support to help reduce overwhelm and create more calm in the spaces you use every day.</p>
             </div>
-            
+
             <div class="service-item">
-                <i class="fas fa-cogs"></i>
-                <h3>Systems Integration & Automation</h3>
-                <p>Streamline district operations by developing automated workflows and integrating systems to reduce redundancy, improve data accuracy, and increase efficiency.</p>
+                <i class="fas fa-box-open"></i>
+                <h3>Home Organization</h3>
+                <p>Thoughtful organizing systems that feel manageable, functional, and realistic for your season of life.</p>
             </div>
-            
+
             <div class="service-item">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Instructional Technology Integration</h3>
-                <p>Drive the adoption of instructional technologies that support personalized learning, enhance instructional delivery, and align with TEKS and content standards.</p>
+                <i class="fas fa-heart"></i>
+                <h3>Sentimental Sorting</h3>
+                <p>Support with emotionally charged items, memories, and belongings that feel especially hard to face alone.</p>
             </div>
-            
+
             <div class="service-item">
-                <i class="fas fa-chart-bar"></i>
-                <h3>Data Management & Reporting</h3>
-                <p>Build and manage educational data systems that ensure reporting accuracy, support campus and district decision-making, and maintain data integrity.</p>
+                <i class="fas fa-baby"></i>
+                <h3>Nesting Support</h3>
+                <p>Nursery, baby-item, and family-space support for new parents and growing families preparing for change.</p>
             </div>
-            
+
             <div class="service-item">
-                <i class="fas fa-tasks"></i>
-                <h3>Project Management</h3>
-                <p>Oversee cross-functional technology initiatives from planning to execution, ensuring alignment with instructional goals, timelines, and long-term sustainability.</p>
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Decision Support</h3>
+                <p>Client-led guidance without timelines, pressure, or judgment so choices feel safer and more manageable.</p>
             </div>
-            
+
             <div class="service-item">
-                <i class="fas fa-user-shield"></i>
-                <h3>Security & Compliance</h3>
-                <p>Ensure secure system access and data privacy through SSO, LDAP, and role-based controls, maintaining full compliance with FERPA, COPPA, and district standards.</p>
+                <i class="fas fa-donate"></i>
+                <h3>Donation Coordination</h3>
+                <p>Help with gathering, sorting, and coordinating donated items as part of the organizing process.</p>
             </div>
+
         </div>
 
     </section>
     <!-------------------- Services Area (End) -------------------->
 
 
-
-    <!-------------------- Portfolio Area (Start) -------------------->
+    <!-------------------- Portfolio Area / Who We Help (Start) -------------------->
     <section class="portfolio" id="portfolio">
 
         <div class="heading">
-            <h2>my <span>projects</span></h2>
+            <h2>who we <span>help</span></h2>
         </div>
+
+        <p class="section-note">
+            Different seasons. Same need for support.
+        </p>
 
         <div class="gallery">
-
-            <ul class="controls">
-                <li class="button btn active" data-filter="all">all</li>
-                <li class="button btn" data-filter="web">Web Development</li>
-                <li class="button btn" data-filter="automation">Automation & Analytics</li>
-                <li class="button btn" data-filter="design">Instructional Design</li>
-                <li class="button btn" data-filter="project">Project Management</li>
-            </ul>
-    
             <div class="box-container">
-    
-<!-- CLM Misting Solutions Website -->
-<div class="portfolio-item image web">
-  <!-- Thumbnail: opens site in a new tab -->
-  <a
-    href="https://clmmistingsolutions.com/"
-    target="_blank"
-    title="Visit CLM Misting Solutions"
-    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-  >
-    <img
-      src="assets/images/Portfolio/portfolio-1.png"
-      alt="CLM Misting Solutions homepage screenshot"
-      width="600" height="400"
-      style="object-fit:cover;"
-    />
-  </a>
 
-  <div class="content project-demo">
-    <h4>CLM Misting Solutions</h4>
-    <p>Custom site for a mosquito misting solutions provider</p>
-
-    <a
-      href="https://clmmistingsolutions.com/"
-      class="btn demo-btn"
-      target="_blank"
-    >
-      <i class="fas fa-external-link-alt"></i> Visit Site
-    </a>
-
-    <p class="disclaimer">
-      ⚙️ Fully designed & developed by me.
-    </p>
-  </div>
-</div>
-
-<!-- LHS Farmers Baseball Website -->
-<div class="portfolio-item image web">
-  <!-- Thumbnail: opens site in a new tab -->
-  <a
-    href="https://sites.google.com/view/lhsfarmerbaseball/home"
-    target="_blank"
-    title="Visit LHS Farmers Baseball"
-    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-  >
-    <img
-      src="assets/images/Portfolio/portfolio-2.png"
-      alt="LHS Farmers Baseball team site screenshot"
-      width="600" height="400"
-      style="object-fit:cover;"
-    />
-  </a>
-
-  <div class="content project-demo">
-    <h4>LHS Farmers Baseball</h4>
-    <p>Branded, automated team website boosting school–community communication</p>
-
-    <a
-      href="https://sites.google.com/view/lhsfarmerbaseball/home"
-      class="btn demo-btn"
-      target="_blank"
-    >
-      <i class="fas fa-external-link-alt"></i> Visit Site
-    </a>
-
-    <p class="disclaimer">
-      ⚙️ Fully designed & developed by me.
-    </p>
-  </div>
-</div>
-    
-                <div class="portfolio-item image automation">
-                  <!-- Thumbnail: click anywhere here to open demo -->
-                  <a
-                    href="https://sites.google.com/garlandisd.net/campusdata/student-search"
-                    target="_blank"
-                    title="Launch Student Monitoring System Demo"
-                    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-                  >
-                    <img
-                      src="assets/images/Portfolio/portfolio-3.png"
-                      alt="Student Monitoring System screenshot"
-                      width="600" height="400"
-                      style="object-fit:cover;"
-                    />
-                  </a>
-                
-                  <div class="content project-demo">
-                    <h4>Student Monitoring System</h4>
-                    <p>Real-time behavior &amp; attendance tracker</p>
-                
-                    <ul class="demo-details">
-                      <li>🔢 Sample ID: <strong>287271</strong></li>
-                      <li>📋 Browse “Reports” for more IDs</li>
-                    </ul>
-                
-                    <a
-                      href="https://sites.google.com/garlandisd.net/campusdata/student-search"
-                      class="btn demo-btn"
-                      target="_blank"
-                    >
-                      <i class="fas fa-play"></i> Launch Live Demo
-                    </a>
-                
-                    <p class="disclaimer">
-                      ⚠️ All data is fictitious to protect privacy. Fully coded by me.
-                    </p>
-                  </div>
+                <div class="portfolio-item image">
+                    <img src="assets/images/Portfolio/grief-loss-placeholder.jpg" alt="Placeholder for grief and loss support">
+                    <div class="content project-demo">
+                        <h4>Grief & Loss</h4>
+                        <p>Support for individuals and families moving through loss after the death of a loved one or divorce.</p>
+                    </div>
                 </div>
-    
-<!-- Attendance & Makeup Time Dashboard -->
-<div class="portfolio-item image automation">
-  <!-- Thumbnail: opens report in a new tab -->
-  <a
-    href="https://sites.google.com/garlandisd.net/campusdata/campus-data/attendance-report"
-    target="_blank"
-    title="Open Attendance & Makeup Time Dashboard"
-    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-  >
-    <img
-      src="assets/images/Portfolio/portfolio-4.png"
-      alt="Attendance & Makeup Time Dashboard screenshot"
-      width="600" height="400"
-      style="object-fit:cover;"
-    />
-  </a>
 
-  <div class="content project-demo">
-    <h4>Attendance & LOC Report</h4>
-    <p>Interactive report for student absences, tardies & makeup hours</p>
+                <div class="portfolio-item image">
+                    <img src="assets/images/Portfolio/new-parent-placeholder.jpg" alt="Placeholder for new parent nesting support">
+                    <div class="content project-demo">
+                        <h4>New Parents</h4>
+                        <p>Gentle nesting support for nurseries, baby items, and family spaces before or after a baby arrives.</p>
+                    </div>
+                </div>
 
-    <ul class="demo-details">
-      <li>📊 Shows home campus, absences, tardies & hours owed</li>
-      <li>🔍 Filters: Campus, Class & Instructor, Absences & Tardies</li>
-    </ul>
+                <div class="portfolio-item image">
+                    <img src="assets/images/Portfolio/downsizing-placeholder.jpg" alt="Placeholder for downsizing support">
+                    <div class="content project-demo">
+                        <h4>Downsizing & Empty Nesting</h4>
+                        <p>Thoughtful home support during moves, transitions, and the emotional shifts that come with a new season.</p>
+                    </div>
+                </div>
 
-    <a
-      href="https://sites.google.com/garlandisd.net/campusdata/campus-data/attendance-report"
-      class="btn demo-btn"
-      target="_blank"
-    >
-      <i class="fas fa-play"></i> View Report
-    </a>
+                <div class="portfolio-item image">
+                    <img src="assets/images/Portfolio/caregiver-placeholder.jpg" alt="Placeholder for parent and caregiver support">
+                    <div class="content project-demo">
+                        <h4>Busy Parents & Caregivers</h4>
+                        <p>Support for homes that feel stretched thin, overloaded, or difficult to manage during demanding seasons.</p>
+                    </div>
+                </div>
 
-    <p class="disclaimer">
-      ⚠️ All data is fictitious to protect privacy. Fully coded by me.
-    </p>
-  </div>
-</div>
-<!-- Automated Help Desk System -->
-<!-- Automated Help Desk System -->
-<div class="portfolio-item image project">
-  <!-- Thumbnail: opens image in Magnific-Popup -->
-  <a
-    href="assets/images/Portfolio/portfolio-5.png"
-    class="view-btn"
-    data-effect="mfp-newspaper"
-    title="Preview Automated Help Desk System screenshot"
-    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-  >
-    <img
-      src="assets/images/Portfolio/portfolio-5.png"
-      alt="Automated Help Desk System screenshot"
-      width="600" height="400"
-      style="object-fit:cover;"
-    />
-  </a>
-
-  <div class="content project-demo">
-    <h4>Automated Help Desk System</h4>
-    <p>Custom ticketing platform to streamline support requests</p>
-
-    <a
-      href="https://nexaflowdigital.github.io/support-desk/"
-      class="btn demo-btn"
-      target="_blank"
-    >
-      <i class="fas fa-external-link-alt"></i> Launch System
-    </a>
-
-    <p class="disclaimer">
-      ⚙️ Fully designed & developed by me.
-    </p>
-  </div>
-</div>
-
-<!-- Canvas LMS Home Page -->
-<div class="portfolio-item image design">
-  <!-- Thumbnail: opens image in Magnific-Popup -->
-  <a
-    href="assets/images/Portfolio/portfolio-6.png"
-    class="view-btn"
-    data-effect="mfp-newspaper"
-    title="Preview Canvas LMS Home Page screenshot"
-    style="display:inline-block; width:600px; height:400px; overflow:hidden;"
-  >
-    <img
-      src="assets/images/Portfolio/portfolio-6.png"
-      alt="Canvas LMS Home Page screenshot"
-      width="600" height="400"
-      style="object-fit:cover;"
-    />
-  </a>
-
-  <div class="content project-demo">
-    <h4>Canvas LMS Home Page</h4>
-    <p>Custom landing page with daily lesson‐cycle tabs</p>
-
-    <ul class="demo-details">
-      <li>📚 Quick-access buttons: Modules, Calendar, Assignments</li>
-      <li>📅 Daily tabs: Launch → Explore → Apply → Demonstrate</li>
-    </ul>
-
-    <a
-      href="assets/images/Portfolio/portfolio-6.png"
-      class="btn demo-btn"
-      target="_blank"
-    >
-      <i class="fas fa-play"></i> View Screenshot
-    </a>
-
-    <p class="disclaimer">
-      ⚙️ Fully designed & customized within Canvas LMS.
-    </p>
-  </div>
-</div>
-    
             </div>
-    
         </div>
-        
+
     </section>
-    <!-------------------- Portfolio Area (End) -------------------->
+    <!-------------------- Portfolio Area / Who We Help (End) -------------------->
 
 
+    <!-------------------- Pricing Area (Start) -------------------->
+    <section class="qualification" id="pricing">
 
-    
+        <div class="heading">
+            <h2>pricing <span>& support</span></h2>
+        </div>
+
+        <p class="pricing-note">
+            Support is offered with patience, compassion, and respect. Every session is paced to meet you where you are.
+        </p>
+
+        <div class="pricing-grid">
+
+            <div class="pricing-card">
+                <h3>Founding Client Support Session</h3>
+                <div class="price">$200 · 4 Hours</div>
+                <p>A focused, hands-on session designed to help you begin gently and without overwhelm.</p>
+                <ul>
+                    <li>In-home decluttering and organizing support</li>
+                    <li>Grief-informed, judgment-free decision guidance</li>
+                    <li>Sorting of sentimental or emotionally complex items</li>
+                    <li>Donation coordination</li>
+                    <li>Breaks and pacing based on your needs</li>
+                    <li>Short follow-up summary with suggested next steps</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Additional Support Sessions</h3>
+                <div class="price">$60 / hour</div>
+                <p>Available after your first session, with a 4-hour minimum. Ideal for larger spaces and long-term transitions.</p>
+                <ul>
+                    <li>Ongoing support at your pace</li>
+                    <li>No pressure to book more than feels right</li>
+                    <li>Can be scheduled as needed</li>
+                    <li>Designed for gradual, manageable progress</li>
+                </ul>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Optional Add-Ons</h3>
+                <div class="price">Custom Options</div>
+                <p>Extra support for specific seasons and larger transitions.</p>
+                <ul>
+                    <li>Nesting Package · $375 for 6 hours</li>
+                    <li>Focused nursery and family-space preparation</li>
+                    <li>Downsizing Support · custom quote</li>
+                    <li>Multi-session planning for major transitions and moves</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+    <!-------------------- Pricing Area (End) -------------------->
 
 
+    <!-------------------- FAQ Area (Start) -------------------->
+    <section class="qualification" id="faq">
 
+        <div class="heading">
+            <h2>frequently asked <span>questions</span></h2>
+        </div>
+
+        <div class="faq-grid">
+
+            <div class="faq-card">
+                <h3>What is Good Grief Co.?</h3>
+                <ul>
+                    <li>Hands-on decluttering and home support</li>
+                    <li>Grief-informed, trauma-aware, and client-led</li>
+                    <li>Practical support offered with compassion</li>
+                </ul>
+            </div>
+
+            <div class="faq-card">
+                <h3>What is it not?</h3>
+                <ul>
+                    <li>Not therapy or mental health treatment</li>
+                    <li>Not crisis intervention</li>
+                    <li>Not a cleaning service</li>
+                    <li>Not a moving company</li>
+                </ul>
+            </div>
+
+            <div class="faq-card">
+                <h3>How do sessions work?</h3>
+                <ul>
+                    <li>Start with the intake form</li>
+                    <li>Then schedule a brief phone conversation</li>
+                    <li>Choose a date that feels comfortable</li>
+                    <li>Sessions are scheduled in 4-hour blocks</li>
+                    <li>Everything moves at the client’s pace</li>
+                </ul>
+            </div>
+
+            <div class="faq-card">
+                <h3>What are your policies?</h3>
+                <ul>
+                    <li>Payment is due at the end of each session</li>
+                    <li>24-hour notice is requested for rescheduling</li>
+                    <li>All client decisions are final and respected</li>
+                    <li>No items are removed without explicit consent</li>
+                    <li>Privacy is always respected</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+    <!-------------------- FAQ Area (End) -------------------->
 
 
     <!-------------------- Contact Area (Start) -------------------->
-   <!-- Contact Area (Start) -->
-<section class="contact" id="contact">
+    <section class="contact" id="contact">
 
-    <div class="heading">
-      <h2><span>contact</span> me</h2>
-    </div>
-  
-    <div class="box-container">
-  
-      <div class="contact-info">
-        <h3>get in touch</h3>
-        <p>I’m dedicated to helping schools harness technology to simplify workflows, empower educators, and improve student outcomes. Let’s collaborate on solutions that drive meaningful change.</p>
-  
-        <div class="info-item">
-          <h4>Phone:</h4>
-          <div class="detail">
-            <div class="fas fa-phone"></div>
-            <p>+1-317-775-2656</p>
-          </div>
+        <div class="heading">
+            <h2><span>contact</span> good grief</h2>
         </div>
-  
-        <div class="info-item">
-          <h4>Email:</h4>
-          <div class="detail">
-            <div class="fas fa-envelope"></div>
-            <p class="gmail">Erikajocowan2014@gmail.com</p>
-          </div>
-        </div>
-  
-        <div class="info-item">
-          <h4>LinkedIn:</h4>
-          <div class="detail">
-            <div class="fab fa-linkedin"></div>
-            <p><a href="https://www.linkedin.com/in/erika-cowan-b04574a1/" target="_blank">linkedin.com/in/erika-cowan-b04574a1/</a></p>
-          </div>
-        </div>
-  
-        <div class="info-item">
-          <h4>Github:</h4>
-          <div class="detail">
-            <div class="fab fa-github"></div>
-            <p><a href="https://github.com/erikasbusinessolutions" target="_blank">github.com/erikasbusinessolutions</a></p>
-          </div>
-        </div>
-      </div><!-- /.contact-info -->
-  
-<!-- Contact Form -->
-<form id="contactUs-Form" class="contact-form">
-  <input type="text"   name="name"    class="box" placeholder="Name"    required />
-  <input type="email"  name="email"   class="box" placeholder="Email"   required />
-  <input type="text"   name="subject" class="box" placeholder="Subject" required />
-  <textarea           name="message" class="box" placeholder="Message" required></textarea>
-  <button type="submit" id="submit" class="btn">send message</button>
-  <span id="msg" class="alert"></span>
-</form>
 
-  </div><!-- /.box-container -->
+        <div class="box-container">
 
-</section>
-<!-- Contact Area (End) -->
+            <div class="contact-info">
+                <h3>reach out when you're ready</h3>
+                <p>
+                    Asking for help with your home during hard seasons is not a failure.
+                    It’s an act of care—for yourself and your family.
+                </p>
+
+                <div class="info-item">
+                    <h4>Phone:</h4>
+                    <div class="detail">
+                        <div class="fas fa-phone"></div>
+                        <p>817-271-1199</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <h4>Service Area:</h4>
+                    <div class="detail">
+                        <div class="fas fa-map-marker-alt"></div>
+                        <p>Lake Cities and surrounding areas</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <h4>Support Style:</h4>
+                    <div class="detail">
+                        <div class="fas fa-hand-holding-heart"></div>
+                        <p>Gentle, client-led, confidential, and judgment-free</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <h4>Getting Started:</h4>
+                    <div class="detail">
+                        <div class="fas fa-leaf"></div>
+                        <p>Complete the intake form and we’ll follow up with a brief phone conversation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contactUs-Form" class="contact-form">
+                <div class="form-title">Start Your Intake</div>
+
+                <input type="text" name="name" class="box" placeholder="Name" required />
+                <input type="text" name="contact_method" class="box" placeholder="Preferred Contact Method (email or phone)" required />
+                <input type="text" name="best_time" class="box" placeholder="Best Days / Times to Reach You" />
+
+                <textarea name="bringing_you_here" class="box" placeholder="What’s bringing you to Good Grief Co. right now? You can share as much or as little as you'd like." required></textarea>
+
+                <div class="form-title">Which season best describes you right now?</div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="season" value="Grief or loss"> Grief or loss</label>
+                    <label><input type="checkbox" name="season" value="New parent / nesting"> New parent / nesting</label>
+                    <label><input type="checkbox" name="season" value="Empty nester / downsizing"> Empty nester / downsizing</label>
+                    <label><input type="checkbox" name="season" value="Busy or overwhelmed parent/caregiver"> Busy or overwhelmed parent/caregiver</label>
+                    <label><input type="checkbox" name="season" value="Other life transition"> Other life transition</label>
+                </div>
+
+                <input type="text" name="overwhelming_areas" class="box" placeholder="Which areas of your home feel most overwhelming?" />
+
+                <div class="form-title">What kind of support feels safest right now?</div>
+                <div class="checkbox-group">
+                    <label><input type="radio" name="support_style" value="Working together side-by-side"> Working together side-by-side</label>
+                    <label><input type="radio" name="support_style" value="Independent work with my guidance"> Independent work with my guidance</label>
+                    <label><input type="radio" name="support_style" value="Not sure yet"> Not sure yet</label>
+                </div>
+
+                <textarea name="approach_gently" class="box" placeholder="Are there items, spaces, or topics you'd like us to approach gently or avoid? (Optional)"></textarea>
+
+                <textarea name="anything_else" class="box" placeholder="Anything else you'd like me to know before we connect? (Optional)"></textarea>
+
+                <p class="helper-text">
+                    Submitting this form does not obligate you to services. This is simply the first step in seeing if support feels like a good fit.
+                </p>
+
+                <button type="submit" id="submit" class="btn">submit intake</button>
+                <span id="msg" class="alert"></span>
+            </form>
+
+        </div>
+
+    </section>
     <!-------------------- Contact Area (End) -------------------->
-
 
 
     <!-------------------- Footer Area (Start) -------------------->
     <footer>
         <div class="social">
-          <!-- X (formerly Twitter) -->
-          <a 
-            href="https://x.com/Ms_ErikaCowan" 
-            class="fas fa-times" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label="X"
-          ></a>
-      
-          <!-- LinkedIn -->
-          <a 
-            href="https://www.linkedin.com/in/erika-cowan-b04574a1/" 
-            class="fab fa-linkedin-in" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          ></a>
-      
-          <!-- GitHub -->
-          <a 
-            href="https://github.com/erikasbusinessolutions" 
-            class="fab fa-github" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          ></a>
-      
-          <!-- YouTube -->
-          <a
-            href="https://www.youtube.com/@AdventurousEducator"
-            class="fab fa-youtube"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-          ></a>
-      
-          <!-- Email -->
-          <a
-          href="mailto:Erikajocowan2014@gmail.com"
-          aria-label="Email"
-          class="social-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fas fa-envelope"></i>
-        </a>
+            <a href="#home" class="fas fa-home" aria-label="Home"></a>
+            <a href="tel:8172711199" class="fas fa-phone" aria-label="Phone"></a>
+            <a href="#contact" class="fas fa-envelope" aria-label="Contact"></a>
+            <a href="#about" class="fas fa-heart" aria-label="About"></a>
         </div>
-      </footer>
+    </footer>
     <!-------------------- Footer Area (End) -------------------->
-
 
 
     <!-- JQuery -->
@@ -809,59 +694,44 @@
     <!-- Typed Script -->
     <script>
         var typed = new Typed('.typing-text', {
-
-            strings: ['Educator', 'Instructional Systems Expert', 'Information Systems Engineer', 'Analytics Specialist', 'Automation Developer', 'Operations Manager'],
-            typeSpeed: 120,
+            strings: [
+                'and everything in between.',
+                'you’re in good company.',
+                'home organization with heart.',
+                'gentle support for hard seasons.'
+            ],
+            typeSpeed: 90,
+            backSpeed: 45,
             loop: true
         });
     </script>
 
-<script>
-  (function(){
-    const FORM_ID  = 'contactUs-Form';
-    const BTN_ID   = 'submit';
-    const MSG_ID   = 'msg';
-    const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyDn6uAx_g5_4d0TUkuNwK2d-FoY1OpMhHjOjhQqc42G5s90tHG3n2E0XT2yMgdZqbeYg/exec';
+    <!-- Contact / Intake Form Script -->
+    <script>
+      (function(){
+        const FORM_ID  = 'contactUs-Form';
+        const BTN_ID   = 'submit';
+        const MSG_ID   = 'msg';
 
-    const form   = document.getElementById(FORM_ID);
-    const submit = document.getElementById(BTN_ID);
-    const msg    = document.getElementById(MSG_ID);
+        const form   = document.getElementById(FORM_ID);
+        const submit = document.getElementById(BTN_ID);
+        const msg    = document.getElementById(MSG_ID);
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      submit.disabled     = true;
-      submit.textContent  = 'Please wait…';
-      msg.textContent     = '';
+        if (!form) return;
 
-      const payload = {
-        name:    form.elements['name'].value.trim(),
-        email:   form.elements['email'].value.trim(),
-        subject: form.elements['subject'].value.trim(),
-        message: form.elements['message'].value.trim()
-      };
-      console.log('Sending payload:', payload);
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          submit.disabled = true;
+          submit.textContent = 'Please wait...';
+          msg.textContent = 'Your intake form is ready. Connect your form endpoint next.';
 
-      fetch(ENDPOINT, {
-        method: 'POST',
-        mode:   'no-cors',
-        headers:{ 'Content-Type':'application/json' },
-        body:    JSON.stringify(payload)
-      })
-      .then(() => {
-        msg.textContent = 'Thanks! Your message has been sent.';
-        form.reset();
-      })
-      .catch(err => {
-        console.error(err);
-        msg.textContent = 'Oops, something went wrong.';
-      })
-      .finally(() => {
-        submit.disabled    = false;
-        submit.textContent = 'send message';
-      });
-    });
-  })();
-</script>
+          setTimeout(() => {
+            submit.disabled = false;
+            submit.textContent = 'submit intake';
+          }, 1200);
+        });
+      })();
+    </script>
 
 </body>
 </html>
