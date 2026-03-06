@@ -1,64 +1,220 @@
 /*--------------------- Responsive (Start) ---------------------*/
+
 @media (max-width: 991px){
     html{
         font-size: 55%;
+    }
+
+    section{
+        padding: 5rem 4%;
+    }
+
+    .home .box-container{
+        gap: 3rem;
+    }
+
+    .home .image{
+        width: 36rem;
+    }
+
+    .home .content{
+        margin-top: 9rem;
+    }
+
+    .about .content,
+    .contact-info,
+    .contact-form,
+    .skill-item{
+        padding: 2.4rem;
+    }
+
+    .portfolio-item{
+        height: 30rem;
     }
 }
 
 @media (max-width: 768px){
     header #menu-btn{
         display: block;
-      } 
-  
-      .header .navbar{
+    }
+
+    .header .navbar{
         width: 30rem;
         position: absolute;
-        right: 0; 
-        top:100%;
-        padding: 0rem 2rem;
-        background: #F7F5F2;
-        border: 0.1rem solid #BC8CF2;
-        -webkit-transition: 0.2s linear;
-        -moz-transition: 0.2s linear;
-        -o-transition: 0.2s linear;
-        transition: 0.2s linear;
+        right: 0;
+        top: 100%;
+        padding: 1rem 2rem 2rem 2rem;
+        background: rgba(251, 247, 245, 0.98);
+        border-left: 0.1rem solid rgba(143, 107, 109, 0.18);
+        border-top: 0.1rem solid rgba(143, 107, 109, 0.18);
+        -webkit-transition: 0.25s linear;
+        -moz-transition: 0.25s linear;
+        -o-transition: 0.25s linear;
+        transition: 0.25s linear;
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
-        height: calc(100vh - 6rem);
+        height: calc(100vh - 7rem);
         overflow-y: auto;
-        -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 0.8rem 2rem rgba(143, 107, 109, 0.12);
+        box-shadow: 0 0.8rem 2rem rgba(143, 107, 109, 0.12);
     }
-  
+
     .header .navbar.active{
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
-  
+
     .header .navbar a{
         display: block;
-        color: #000000;
-        padding: 1.5rem 0;
-        margin: 1rem 0;
+        color: #574446;
+        padding: 1.4rem 0;
+        margin: 0.4rem 0;
+        font-size: 1.7rem;
+        border-bottom: 0.1rem solid rgba(143, 107, 109, 0.10);
     }
-  
+
     .navbar::-webkit-scrollbar{
         width: 0.8rem;
     }
-  
+
     .navbar::-webkit-scrollbar-thumb{
         border-radius: 1rem;
-        background-color: #BC8CF2;
+        background-color: #b99395;
     }
-  
+
     .navbar::-webkit-scrollbar-track{
         background: transparent;
     }
 
-    section, header{
+    section,
+    header{
         padding: 2rem;
     }
 
+    .heading h2{
+        font-size: 3.8rem;
+    }
+
+    .home{
+        padding-top: 7rem;
+    }
+
+    .home .box-container{
+        min-height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 5rem 0 3rem 0;
+    }
+
+    .home .content{
+        margin-top: 0;
+        flex: 1 1 100%;
+    }
+
+    .home .content .text{
+        max-width: 100%;
+    }
+
+    .home .content p{
+        margin: 0 auto;
+    }
+
+    .home .image{
+        width: 100%;
+        max-width: 34rem;
+    }
+
+    .about .box-container,
+    .about .content .about-info,
+    .skills,
+    .contact .box-container{
+        flex-direction: column;
+    }
+
+    .about .content,
+    .counting,
+    .contact-info,
+    .contact-form{
+        width: 100%;
+    }
+
+    .counting .box{
+        flex: 1 1 100%;
+    }
+
+    .skill-item{
+        width: 100%;
+    }
+
+    .service .box-container{
+        gap: 1.5rem;
+    }
+
+    .service-item{
+        flex: 1 1 100%;
+        padding: 3rem 2.2rem;
+    }
+
+    .portfolio .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item{
+        height: 32rem;
+    }
+
+    .portfolio-item .content{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        top: auto;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        min-height: 42%;
+        border-radius: 0;
+        padding: 1.8rem 1.6rem;
+        background: linear-gradient(to top, rgba(87, 68, 70, 0.92), rgba(87, 68, 70, 0.72));
+    }
+
+    .portfolio-item .content h4,
+    .portfolio-item .content p,
+    .portfolio-item .content .view-btn{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .pricing-grid,
+    .faq-grid,
+    .contact-form .checkbox-group{
+        grid-template-columns: 1fr;
+    }
+
+    .experience-item{
+        margin-left: 1.6rem;
+        padding: 0 1.5rem 2.2rem 2.2rem;
+    }
+
+    .experience-item i{
+        left: -2rem;
+        height: 4.2rem;
+        width: 4.2rem;
+        line-height: 4.2rem;
+        font-size: 1.7rem;
+    }
+
+    .experience-item h3{
+        font-size: 2.3rem;
+    }
+
+    .contact-form .checkbox-group label{
+        padding: 1rem 1.2rem;
+    }
+
+    footer .social{
+        gap: 0.8rem;
+    }
 }
 
 @media (max-width: 450px){
@@ -66,12 +222,142 @@
         font-size: 50%;
     }
 
-    section, header{
-        padding: 1rem;
+    section,
+    header{
+        padding: 1.5rem;
     }
 
+    .header .navbar{
+        width: 100%;
+    }
 
+    header .logo h2{
+        font-size: 2.1rem;
+    }
 
+    header .logo h2 span{
+        font-size: 1rem;
+        letter-spacing: 0.18rem;
+    }
+
+    .heading h2{
+        font-size: 3.2rem;
+    }
+
+    .home{
+        padding-top: 7rem;
+    }
+
+    .home .box-container{
+        gap: 2rem;
+        padding: 4rem 0 2rem 0;
+    }
+
+    .home .image{
+        max-width: 28rem;
+    }
+
+    .home .content h2{
+        font-size: 2rem;
+    }
+
+    .home .content h1{
+        font-size: 3.4rem;
+    }
+
+    .home .content h1 span{
+        font-size: 4.2rem;
+    }
+
+    .home .content p{
+        font-size: 1.6rem;
+    }
+
+    .about .content{
+        padding: 2rem;
+    }
+
+    .about .content h2{
+        font-size: 3.2rem;
+    }
+
+    .counting .box,
+    .skill-item,
+    .contact-info,
+    .contact-form,
+    .pricing-card,
+    .faq-card{
+        padding: 2rem 1.6rem;
+    }
+
+    .service-item{
+        padding: 2.4rem 1.8rem;
+    }
+
+    .service-item h3{
+        font-size: 2rem;
+    }
+
+    .portfolio-item{
+        height: 28rem;
+    }
+
+    .portfolio-item .content{
+        min-height: 46%;
+        padding: 1.5rem 1.3rem;
+    }
+
+    .portfolio-item .content h4{
+        font-size: 2.1rem;
+    }
+
+    .portfolio-item .content p{
+        font-size: 1.45rem;
+    }
+
+    .experience-item{
+        margin-left: 1.2rem;
+        padding: 0 0.8rem 2rem 1.8rem;
+    }
+
+    .experience-item i{
+        left: -1.8rem;
+        height: 3.8rem;
+        width: 3.8rem;
+        line-height: 3.8rem;
+        font-size: 1.5rem;
+    }
+
+    .experience-item .content{
+        padding: 1.8rem 1.5rem;
+    }
+
+    .experience-item h3{
+        font-size: 2rem;
+    }
+
+    .price{
+        font-size: 2.8rem;
+    }
+
+    .contact-form .form-title{
+        font-size: 1.8rem;
+    }
+
+    .scroll-top{
+        height: 4.5rem;
+        width: 4.5rem;
+        font-size: 2rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    footer .social .fab,
+    footer .social .fas{
+        height: 4rem;
+        width: 4rem;
+        font-size: 1.7rem;
+    }
 }
 
 /*--------------------- Responsive (End) ---------------------*/
