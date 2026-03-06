@@ -7,9 +7,9 @@
 3- Header Area CSS
 4- Home Area CSS
 5- About Area CSS
-6- Qualification Area CSS 
+6- Qualification / Pricing / FAQ CSS 
 7- Services Area CSS
-8- Portfolio Area CSS
+8- Portfolio / Who We Help CSS
 9- Testimonials Area CSS
 10- Blog Area CSS
 11- Contact Area CSS
@@ -20,49 +20,57 @@
 
 
 /*--------------------- 0- Global CSS (Start) ---------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Imperial+Script&display=swap');
 
 :root{
-    --purple: #BC8CF2;
-    --black: #000000;
-    --white: #F7F5F2;
-    --grey: #DFDFDE;
+    --main-color: #b99395;
+    --main-dark: #8f6b6d;
+    --secondary-color: #d9e6f7;
+    --accent-color: #f6f1ed;
+    --soft-bg: #fbf7f5;
+    --card-bg: #ffffff;
+    --text-dark: #574446;
+    --text-light: #7b6668;
+    --white: #ffffff;
+    --border: rgba(143, 107, 109, 0.18);
+    --shadow: 0 0.8rem 2.4rem rgba(143, 107, 109, 0.10);
 }
 
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-decoration: none;
-    text-transform: capitalize;
+    text-transform: none;
     border: none;
     outline: none;
     -webkit-transition: all 0.2s linear;
        -moz-transition: all 0.2s linear;
          -o-transition: all 0.2s linear;
-  	        transition: all 0.2s linear;
+            transition: all 0.2s linear;
 }
 
 *::selection{
     color: var(--white);
-    background-color: var(--purple);
+    background-color: var(--main-color);
 }
 
 html{
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    scroll-padding-top: 8rem;
 }
 
 body{
-    background-color: var(--black);
+    background-color: var(--soft-bg);
+    color: var(--text-dark);
 }
 
 section{
-    padding: 2rem 5%;
+    padding: 6rem 5%;
 }
 
 ::-webkit-scrollbar{
@@ -71,23 +79,23 @@ section{
 
 ::-webkit-scrollbar-thumb{
     border-radius: 1rem;
-    background-color: var(--purple);
+    background-color: var(--main-color);
 }
 
 ::-webkit-scrollbar-track{
-    background-color: var(--black);
+    background-color: #efe7e3;
 }
 
 .swiper-pagination-bullet{
     height: 1rem;
     width: 1rem;
     border-radius: 50rem;
-    background-color: var(--grey);
+    background-color: #d8caca;
 }
 
 .swiper-pagination-bullet-active{
     width: 3rem;
-    background: var(--purple);
+    background: var(--main-color);
 }
 
 /*--------------------- 0- Global CSS (End) ---------------------*/
@@ -96,31 +104,38 @@ section{
 
 /*--------------------- 1- Heading CSS (Start) ---------------------*/
 .heading{
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 .heading h2{
     text-align: center;
-    padding-bottom: 2rem;
-    color:var(--purple);
-    font-size: 4rem;
+    padding-bottom: 1rem;
+    color: var(--main-dark);
+    font-size: 4.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.06rem;
 }
 
 .heading h2 span{
     position: relative;
     z-index: 0;
-    color: var(--white);
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .heading h2 span::before{
     content: '';
     position: absolute;
-    bottom: -0.5rem; left: 0;
+    bottom: -0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: -1;
-    background: var(--purple);
-    height: 0.2rem;
-    width: 80%;
-    margin-left: 10%;
+    background: var(--secondary-color);
+    height: 1rem;
+    width: 88%;
+    border-radius: 5rem;
+    opacity: 0.8;
 }
 
 /*--------------------- 1- Heading CSS (End) ---------------------*/
@@ -130,11 +145,16 @@ section{
 /*--------------------- 2- Button CSS (Start) ---------------------*/
 .btn{
     display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 1.8rem;
-    color: var(--purple);
-    background-color: transparent;
-    border: 0.2rem solid var(--purple);
+    padding: 1.2rem 2.4rem;
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    border: 0.2rem solid var(--main-color);
+    border-radius: 5rem;
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
 }
 
 .btn i{
@@ -142,8 +162,8 @@ section{
 }
 
 .btn:hover{
-    color: var(--white);
-    background-color: var(--purple);
+    color: var(--main-dark);
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -167,7 +187,8 @@ header{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: transparent;
+    background: rgba(251, 247, 245, 0.92);
+    backdrop-filter: blur(1rem);
     -webkit-transition: all 0.5s linear;
        -moz-transition: all 0.5s linear;
          -o-transition: all 0.5s linear;
@@ -176,32 +197,47 @@ header{
 }
 
 header.sticky{
-    border-bottom: 0.1rem solid var(--grey);
-    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 0.1rem solid var(--border);
+    background: rgba(251, 247, 245, 0.97);
+    box-shadow: 0 0.4rem 1.8rem rgba(143, 107, 109, 0.08);
 }
 
 header .logo h2{
     font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--purple);
+    font-weight: 700;
+    color: var(--main-dark);
     text-transform: uppercase;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.14rem;
+    line-height: 1.2;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+header .logo h2 span{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.26rem;
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0.2rem;
 }
 
 header .navbar a{
-    color: var(--white);
-    font-size: 1.8rem;
-    margin-left: 1rem;
+    color: var(--text-dark);
+    font-size: 1.55rem;
+    font-weight: 500;
+    margin-left: 1.4rem;
+    text-transform: lowercase;
 }
 
 header .navbar a:hover,
 header .navbar a.active{
-    color: var(--purple);
+    color: var(--main-color);
 }
 
 header #menu-btn{
     font-size: 3rem;
-    color: var(--white);
+    color: var(--text-dark);
     cursor: pointer;
     -webkit-transition: all 0.5s linear;
        -moz-transition: all 0.5s linear;
@@ -216,7 +252,7 @@ header .fa-times{
 }
 
 header #menu-btn:hover{
-    color: var(--purple);
+    color: var(--main-color);
 }
 
 /*--------------------- 3- Header Area CSS (End) ---------------------*/
@@ -226,7 +262,7 @@ header #menu-btn:hover{
 /*--------------------- 4- Home Area CSS (Start) ---------------------*/
 .home{
     padding: 0rem 5%;
-    background-color: var(--black);
+    background: linear-gradient(135deg, rgba(185,147,149,0.18), rgba(217,230,247,0.25));
     min-height: 100vh;
 }
 
@@ -243,67 +279,75 @@ header #menu-btn:hover{
     align-items: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 4rem;
+    gap: 5rem;
 }
 
 .home .image {
-    width: 32rem;      /* match About’s container width */
+    width: 42rem;
     text-align: center;
 }
 
 .home .image img {
-    width: 100%;       /* fill that container */
-    height: auto;      /* keep its natural aspect ratio */
-    border: 1rem solid var(--purple);
-    /* remove any rounding so it stays a rectangle */
-    border-radius: 0;
+    width: 100%;
+    height: auto;
+    border: 1rem solid rgba(255,255,255,0.75);
+    border-radius: 2rem;
     object-fit: cover;
+    box-shadow: var(--shadow);
 }
 
 .home .content{
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 40rem;
-        flex: 1 1 40rem;
-
+    -ms-flex: 1 1 46rem;
+        flex: 1 1 46rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-
     margin-top: 7rem;
 }
 
+.home .content .text{
+    max-width: 62rem;
+}
+
 .home .content h2{
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--purple);
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: var(--main-dark);
+    letter-spacing: 0.08rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .home .content h1{
-    font-size: 4rem;
-    color: var(--white);
+    font-size: 5.6rem;
+    color: var(--text-dark);
     padding: 1rem 0;
-    text-transform: none;
+    line-height: 1.1;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .home .content h1 span{
-    color: var(--purple);
-
+    color: var(--main-color);
+    font-family: 'Imperial Script', cursive;
+    font-size: 6.2rem;
+    font-weight: 400;
 }
 
 .home .content p{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    color: var(--white);
-    padding-bottom: 2rem;
-    line-height: 1.5;
+    color: var(--text-light);
+    padding-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 58rem;
 }
 /*--------------------- 4- Home Area CSS (End) ---------------------*/
 
@@ -312,59 +356,66 @@ header #menu-btn:hover{
 /*--------------------- 5- About Area CSS (Start) ---------------------*/
 .about .box-container {
     display: flex;
-    justify-content: space-between;   /* push .content to left, .counting to right */
-    align-items: flex-start;           /* align both items at the top */
+    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
     padding: 2rem 0;
 }
 
-/* remove the image entirely—no .about .image rules needed */
-
 .about .content {
-    flex: 1 1 55rem;                   /* roughly 55rem wide, but will shrink if needed */
-    order: 1;                          /* ensure this always comes first */
+    flex: 1 1 55rem;
+    order: 1;
+    background: var(--card-bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 2rem;
+    padding: 3rem;
+    box-shadow: var(--shadow);
 }
 
 .about .content h2 {
-    font-size: 3rem;
-    color: var(--white);
-    padding-bottom: 1rem;
+    font-size: 4rem;
+    color: var(--text-dark);
+    padding-bottom: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .about .content > p {
-    font-size: 1.6rem;
-    color: var(--grey);
-    line-height: 1.6;
-    padding-bottom: 1rem;
+    font-size: 1.65rem;
+    color: var(--text-light);
+    line-height: 1.9;
+    padding-bottom: 1.5rem;
 }
 
 .about .content .about-info {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
+    margin-top: 1rem;
 }
 
 .about .content .about-info .info {
-    flex: 1 1 15rem;
+    flex: 1 1 20rem;
 }
 
 .about .content .about-info .info h4 {
     font-size: 1.6rem;
-    color: var(--white);
+    color: var(--text-dark);
     padding-bottom: 1rem;
+    font-weight: 600;
 }
 
 .about .content .about-info .info span {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
     font-weight: 400;
-    color: var(--grey);
+    color: var(--text-light);
 }
 
 .about .content .about-info .info .btn {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .counting {
@@ -372,35 +423,42 @@ header #menu-btn:hover{
     order: 2;
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;    /* <-- changed from center */
+    align-items: stretch;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .counting .box {
     flex: 1 1 18rem;
-    display: flex;           /* make each box a flex-container */
-    flex-direction: column;  /* stack its children vertically */
-    justify-content: center; /* center the number and label vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    background-color: #222;
-    padding: 2rem;
+    background: linear-gradient(180deg, #fff, #f7efec);
+    border: 0.1rem solid var(--border);
+    border-radius: 1.6rem;
+    padding: 2.4rem 1.8rem;
+    box-shadow: var(--shadow);
 }
 
-/* the rest stays the same */
-.counting .box .count {
+.counting .box .count,
+.counting .box h1 {
     font-size: 3.5rem;
-    color: var(--purple);
-    padding-bottom: 0.5rem;
+    color: var(--main-color);
+    padding-bottom: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
 }
 
 .counting .box h3 {
-    font-size: 1.8rem;
-    color: var(--white);
+    font-size: 1.65rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-weight: 500;
 }
-/*--------------------- 5- About Area CSS (End) ---------------------*/
+
 .skill-container{
-    padding: 2rem 0;
+    padding: 4rem 0 0 0;
 }
 
 .skills{
@@ -409,68 +467,81 @@ header #menu-btn:hover{
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .skill-item{
     -webkit-box-flex: 1;
     -ms-flex: 1 1 30rem;
         flex: 1 1 30rem;
-    margin-right: 1.5rem;
+    margin-right: 0;
+    background: var(--card-bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 1.8rem;
+    padding: 2rem 2.2rem;
+    box-shadow: var(--shadow);
 }
 
 .skill-item .box{
-    padding:1rem 0;
+    padding: 1rem 0;
 }
 
- .skill-item .box h3{
+.skill-item .box h3{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
     justify-content: space-between;
-    padding:.7rem 0;
-    font-size: 1.7rem;
-    color: var(--white);
-    font-weight: 400;
+    gap: 1rem;
+    padding: .7rem 0;
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.6;
 }
 
- .skill-item .box .progress-bar{
-    width:100%;
-    background:#222;
-    overflow:hidden;
-    height:1rem;
+.skill-item .box h3 span{
+    color: var(--main-dark);
+    font-weight: 600;
+}
+
+.skill-item .box .progress-bar{
+    width: 100%;
+    background: #f0e7e4;
+    overflow: hidden;
+    height: 1rem;
     border-radius: 50rem;
 }
 
- .skill-item .box .progress-bar span{
-    display:block;
-    height:100%;
-    background: var(--purple);
+.skill-item .box .progress-bar span{
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), var(--secondary-color));
 }
 
- .skill-item.item1 .box:nth-child(1) .progress-bar span{
-    width:95%;
+.skill-item.item1 .box:nth-child(1) .progress-bar span{
+    width: 96%;
 }
 
- .skill-item.item1 .box:nth-child(2) .progress-bar span{
-    width:90%;
+.skill-item.item1 .box:nth-child(2) .progress-bar span{
+    width: 92%;
 }
 
- .skill-item.item1 .box:nth-child(3) .progress-bar span{
-    width:85%;
+.skill-item.item1 .box:nth-child(3) .progress-bar span{
+    width: 88%;
 }
 
 .skill-item.item2 .box:nth-child(1) .progress-bar span{
-    width:75%;
+    width: 90%;
 }
 
- .skill-item.item2 .box:nth-child(2) .progress-bar span{
-    width:65%;
+.skill-item.item2 .box:nth-child(2) .progress-bar span{
+    width: 82%;
 }
 
- .skill-item.item2 .box:nth-child(3) .progress-bar span{
-    width:60%;
+.skill-item.item2 .box:nth-child(3) .progress-bar span{
+    width: 94%;
 }
 
 /*--------------------- 5- About Area CSS (End) ---------------------*/
@@ -504,63 +575,70 @@ header #menu-btn:hover{
     -webkit-box-flex: 1;
     -ms-flex: 1 1 40rem;
         flex: 1 1 40rem;
-    padding: 0 3rem 2rem 3rem;
-    border-left: 0.2rem solid var(--purple);
+    padding: 0 3rem 2.5rem 3rem;
+    border-left: 0.2rem solid var(--main-color);
     margin-left: 2rem;
 }
 
 .experience-item i{
     position: absolute;
-    top: 0; 
+    top: 0;
     left: -2.5rem;
-    height:5rem;
+    height: 5rem;
     width: 5rem;
     border-radius: 50%;
     line-height: 5rem;
     text-align: center;
     font-size: 2rem;
-    color:var(--white);
-    background:var(--purple);
+    color: var(--white);
+    background: var(--main-color);
+    box-shadow: var(--shadow);
 }
 
 .experience-item .content{
-    border-radius: 0.5rem;
-    padding: 1rem 2rem;
-    border-left: 2rem;
+    border-radius: 1.4rem;
+    padding: 2.2rem 2.2rem;
+    background: var(--card-bg);
+    border: 0.1rem solid var(--border);
+    box-shadow: var(--shadow);
 }
 
 .experience-item span{
-    background: #222;
-    color: var(--white);
-    padding: 0.5rem 1.5rem;
-    font-size: 1.8rem;
+    display: inline-block;
+    background: #f3e7e4;
+    color: var(--main-dark);
+    padding: 0.6rem 1.5rem;
+    font-size: 1.5rem;
     border-radius: 50rem;
+    font-weight: 600;
 }
 
 .experience-item h3{
-    font-size: 2.5rem;
-    color: var(--white);
-    padding: 2rem 0;
+    font-size: 2.7rem;
+    color: var(--text-dark);
+    padding: 1.8rem 0 1.2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .experience-item p{
-    color: var(--grey);
+    color: var(--text-light);
     font-size: 1.6rem;
-    line-height: 2.5rem;
+    line-height: 1.9;
 }
 
 .experience-list {
     list-style-type: disc;
     margin: 1rem 0 1rem 2rem;
     padding: 0;
-  }
+}
   
-  .experience-list li {
+.experience-list li {
     margin-bottom: 0.5rem;
     font-size: 1.6rem;
-    line-height: 2.5rem;
-    color: var(--white);    /* ← add this */
-  }
+    line-height: 2.2rem;
+    color: var(--text-dark);
+}
 
 /*--------------------- 6- Qualification Area CSS (End) ---------------------*/
 
@@ -574,52 +652,56 @@ header #menu-btn:hover{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .service-item{
     -webkit-box-flex: 1;
     -ms-flex: 1 1 33rem;
         flex: 1 1 33rem;
-    background-color: var(--black);
+    background-color: var(--card-bg);
     padding: 4rem 3rem;
     text-align: center;
-    border: 0.1rem solid rgba(255,255, 255, 0.3);
-    border-radius: 0.5rem;
-    -webkit-transition: all 0.5s linear;
-       -moz-transition: all 0.5s linear;
-         -o-transition: all 0.5s linear;
-            transition: all 0.5s linear;
+    border: 0.1rem solid var(--border);
+    border-radius: 1.8rem;
+    box-shadow: var(--shadow);
+    -webkit-transition: all 0.35s ease;
+       -moz-transition: all 0.35s ease;
+         -o-transition: all 0.35s ease;
+            transition: all 0.35s ease;
 }
 
 .service-item:hover{
-    background-color: var(--purple);
+    transform: translateY(-0.5rem);
+    background: linear-gradient(180deg, #fff, #f9f3f1);
 }
 
 .service-item i{
-    color: var(--white);
+    color: var(--main-color);
     font-size: 4rem;
 }
 
 .service-item h3{
-    font-size: 2rem;
-    color: var(--white);
-    padding: 1.5rem 0;
+    font-size: 2.3rem;
+    color: var(--text-dark);
+    padding: 1.7rem 0 1rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .service-item p{
-    font-size: 1.6rem;
-    color: var(--grey);
-    line-height: 1.6;
+    font-size: 1.55rem;
+    color: var(--text-light);
+    line-height: 1.8;
 }
 
 .service-item:hover p{
-    color: var(--white);
+    color: var(--text-dark);
 }
 
 /*--------------------- 7- Services Area CSS (End) ---------------------*/
@@ -650,23 +732,37 @@ header #menu-btn:hover{
 
 .controls .button.active{
     cursor: pointer;
-    background-color: var(--purple);
+    background-color: var(--main-color);
     color: var(--white);
+}
+
+.portfolio .section-note,
+.pricing-note,
+.faq-note{
+    max-width: 75rem;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--text-light);
+    line-height: 1.8;
 }
 
 .portfolio .box-container{
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
-    gap: 0.5rem;
-    padding: 2rem 0; 
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 .portfolio-item{
-    border-radius: 0.5rem;
-    height: 25rem;
+    border-radius: 1.8rem;
+    height: 34rem;
     overflow: hidden;
     position: relative;
+    box-shadow: var(--shadow);
+    border: 0.1rem solid var(--border);
+    background: var(--card-bg);
 }
 
 .portfolio-item img{
@@ -678,12 +774,13 @@ header #menu-btn:hover{
 .portfolio-item .content{
     content: '';
     position: absolute;
-    top: 10%;
-    left: 10%;
-    height: 80%;
-    width: 80%;
-    border-radius: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.8);
+    top: 8%;
+    left: 8%;
+    height: 84%;
+    width: 84%;
+    border-radius: 1.6rem;
+    background-color: rgba(87, 68, 70, 0.84);
+    padding: 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -693,6 +790,7 @@ header #menu-btn:hover{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    text-align: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -702,9 +800,9 @@ header #menu-btn:hover{
 }
 
 .portfolio-item .content h4{
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--purple);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--white);
     transform-origin: top;
     -webkit-transform: translateY(-10rem);
             transform: translateY(-10rem);
@@ -714,12 +812,14 @@ header #menu-btn:hover{
        -moz-transition: all 0.4s linear;
          -o-transition: all 0.4s linear;
             transition: all 0.4s linear;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .portfolio-item .content p{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 400;
-    color: var(--white);
+    color: #f6ecec;
+    line-height: 1.8;
     transform-origin: top;
     -webkit-transform: translateY(-10rem);
             transform: translateY(-10rem);
@@ -732,7 +832,7 @@ header #menu-btn:hover{
 
 .portfolio-item .content .view-btn{
     font-size: 2rem;
-    color: var(--purple);
+    color: var(--white);
     transform-origin: top;
     -webkit-transform: translateY(-10rem);
             transform: translateY(-10rem);
@@ -747,7 +847,7 @@ header #menu-btn:hover{
 
 .demo-details {
     color: #f1f1f1;
-  }
+}
 
 .portfolio-item:hover .content{
     -webkit-transform: scale(1);
@@ -773,8 +873,8 @@ header #menu-btn:hover{
 }
 
 .portfolio-item:hover img{
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
 }
 
 /*CSS3 Animation Effects for Magnific Popup*/
@@ -784,7 +884,6 @@ header #menu-btn:hover{
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out; 
             transition: all 0.2s ease-in-out; 
-
     -webkit-transform: scale(0) rotate(500deg);
             transform: scale(0) rotate(500deg);
 }
@@ -814,7 +913,6 @@ header #menu-btn:hover{
     opacity: 0;
 }
 
-
 /*--------------------- 8- Portfolio Area CSS (End) ---------------------*/
 
 
@@ -828,33 +926,35 @@ header #menu-btn:hover{
 
 .testi-item{
     text-align: center;
-    border: 0.1rem solid var(--grey);
-    border-radius: 0.5rem;
+    border: 0.1rem solid var(--border);
+    border-radius: 1.5rem;
     padding: 4rem 2rem;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
 }
 
 .testi-item:hover{
-    border-color: var(--purple);
+    border-color: var(--main-color);
 }
 
 .testi-item img{
     height: 10rem;
     width: 10rem;
     border-radius: 50%;
-    border: 0.5rem solid var(--white);
+    border: 0.5rem solid var(--accent-color);
 }
 
 .testi-item .fa-quote-left{
     display: block;
     font-size: 3rem;
-    color: var(--white);
+    color: var(--main-color);
     margin: 1rem 0;
 }
 
 .testi-item p{
-    color: var(--grey);
+    color: var(--text-light);
     font-size: 1.5rem;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
 .testi-item .intro{
@@ -863,14 +963,14 @@ header #menu-btn:hover{
 
 .testi-item .intro h3{
     font-size: 2rem;
-    color: var(--white);
+    color: var(--text-dark);
     padding-bottom: 0.5rem;
 }
 
 .testi-item .intro h5{
-    color: var(--purple);
+    color: var(--main-color);
     font-size: 1.4rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /*--------------------- 9- Testimonials Area CSS (End) ---------------------*/
@@ -885,10 +985,11 @@ header #menu-btn:hover{
 }
 
 .blog-item{
-    background-color: #222;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
+    background-color: var(--card-bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 1.5rem;
     overflow: hidden;
+    box-shadow: var(--shadow);
 }
 
 .blog-item .image{
@@ -897,8 +998,8 @@ header #menu-btn:hover{
 }
 
 .blog-item:hover .image img{
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
 }
 
 .blog-item .image img{
@@ -908,7 +1009,7 @@ header #menu-btn:hover{
 }
 
 .blog-item .content{
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
 }
 
 .blog-item .content .intro{
@@ -918,7 +1019,7 @@ header #menu-btn:hover{
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    border-bottom: 0.2rem solid var(--grey);
+    border-bottom: 0.1rem solid #eadede;
     padding: 1rem 0;
     margin-bottom: 1.5rem;
 }
@@ -928,24 +1029,26 @@ header #menu-btn:hover{
 }
 
 .blog-item .content .intro h5 i{
-    color: var(--purple);
+    color: var(--main-color);
     padding-right: 0.5rem;
 }
 
 .blog-item .content .intro h5 span{
-    color: var(--grey);
+    color: var(--text-light);
 }
 
 .blog-item .content .main-heading{
     font-size: 2rem;
-    font-weight: bold;
-    color: var(--white);
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .blog-item p{
     padding: 1rem 0;
     font-size: 1.6rem;
-    color: var(--grey);
+    color: var(--text-light);
+    line-height: 1.7;
 }
 
 .blog-item .btn{
@@ -958,10 +1061,12 @@ header #menu-btn:hover{
 
 /*--------------------- 11- Contact Area CSS (Start) ---------------------*/
 .contact .alert{
-    font-size: 2rem;
-    color: var(--purple);
+    font-size: 1.7rem;
+    color: var(--main-dark);
     border-radius: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0;
+    display: block;
+    margin-top: 1rem;
 }
 
 .contact .box-container{
@@ -971,9 +1076,9 @@ header #menu-btn:hover{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 2rem;
@@ -983,21 +1088,29 @@ header #menu-btn:hover{
     -webkit-box-flex: 1;
     -ms-flex: 1 1 42rem;
         flex: 1 1 42rem;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border);
+    box-shadow: var(--shadow);
 }
 
 .contact-info h3{
-    font-size: 3rem;
-    color: var(--white);
+    font-size: 3.2rem;
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .contact-info > p{
     font-size: 1.6rem;
-    color: var(--grey);
-    padding: 0.5rem 0;
+    color: var(--text-light);
+    padding: 1rem 0 1.5rem 0;
+    line-height: 1.8;
 }
 
 .contact-info .info-item{
-    padding: 1rem 0;
+    padding: 1.1rem 0;
 }
 
 .contact-info .info-item .gmail,
@@ -1008,73 +1121,90 @@ header #menu-btn:hover{
 
 .contact-info .info-item h4{
     font-size: 1.8rem;
-    color: var(--white);
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
 }
 
 .contact-info .info-item .detail{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
 }
 
 .contact-info .info-item .detail .fas,
 .contact-info .info-item .detail .fab{
     border-radius: 50%;
-    color: var(--purple);
+    color: var(--main-color);
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;;
+    display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    min-width: 2rem;
+    margin-top: 0.2rem;
 }
 
 .contact-info .info-item .detail p{
     font-size: 1.6rem;
-    color: var(--grey);
-    line-height: 1.6;
+    color: var(--text-light);
+    line-height: 1.8;
     padding-left: 1rem;
 }
 
-/* make all links in the contact info match your grey text */
 .contact-info .detail a {
-    color: var(--grey);
+    color: var(--text-light);
     text-decoration: none;
-  }
-  .contact-info .detail a:hover {
-    color: var(--white);
-  }
+}
+.contact-info .detail a:hover {
+    color: var(--main-dark);
+}
 
 .contact-form{
     -webkit-box-flex: 1;
     -ms-flex: 1 1 42rem;
         flex: 1 1 42rem;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 0.1rem solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.contact-form .form-title{
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin: 1rem 0 1.2rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
 }
 
 .contact-form .box{
     width: 100%;
     text-transform: none;
-    color: var(--grey);
-    font-size: 1.6rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    margin: 0.5rem 0;
-    background-color: #222;
+    color: var(--text-dark);
+    font-size: 1.55rem;
+    border: 0.1rem solid #eadede;
+    padding: 1.6rem;
+    margin: 0.7rem 0;
+    background-color: #fcf8f7;
+    border-radius: 1.2rem;
 }
 
 .contact-form .box:focus{
-    border-color: var(--white);
+    border-color: var(--main-color);
+    background: var(--white);
 }
 
 .contact-form .box::placeholder{
-    color: var(--grey);
+    color: #9a8587;
 }
 
 .contact-form textarea{
@@ -1082,8 +1212,40 @@ header #menu-btn:hover{
     resize: none;
 }
 
+.contact-form .checkbox-group{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .checkbox-group label{
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    background: #fcf8f7;
+    border: 0.1rem solid #eadede;
+    border-radius: 1.2rem;
+    padding: 1.2rem 1.3rem;
+    line-height: 1.6;
+}
+
+.contact-form .checkbox-group input{
+    margin-top: 0.2rem;
+    accent-color: var(--main-color);
+}
+
+.contact-form .helper-text{
+    font-size: 1.35rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-top: 0.5rem;
+}
+
 .contact-form .btn{
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 /*--------------------- 11- Contact Area CSS (End) ---------------------*/
@@ -1092,9 +1254,10 @@ header #menu-btn:hover{
 
 /*--------------------- 12- Footer Area CSS (Start) ---------------------*/
 footer{
-    background-color: var(--purple);
+    background: #efe3df;
     padding: 2rem 0;
     text-align: center;
+    border-top: 0.1rem solid var(--border);
 }
 
 footer .social{
@@ -1104,35 +1267,19 @@ footer .social{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-footer .social .fab{
-    background-color: var(--black);
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    color: var(--white);
-    font-size: 2rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin: 0 0.5rem;
-}
-
+footer .social .fab,
 footer .social .fas{
-    background-color: var(--black);
+    background-color: var(--main-color);
     border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
+    height: 4.4rem;
+    width: 4.4rem;
     color: var(--white);
-    font-size: 2rem;
+    font-size: 1.9rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1142,21 +1289,23 @@ footer .social .fas{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin: 0 0.5rem;
+    margin: 0;
+    box-shadow: var(--shadow);
 }
 
-footer .social .fab:hover{
-    color: var(--black);
+footer .social .fab:hover,
+footer .social .fas:hover{
+    color: var(--main-dark);
     background-color: var(--white);
 }
 
 footer .content p{
-    font-size: 2rem;
-    color: var(--white);
+    font-size: 1.8rem;
+    color: var(--text-dark);
 }
 
 footer .content p span{
-    color: var(--black);
+    color: var(--main-dark);
 }
 
 /*--------------------- 12- Footer Area CSS (End) ---------------------*/
@@ -1166,13 +1315,13 @@ footer .content p span{
 /*--------------------- 13- Scroll-Top (Start) ---------------------*/
 .scroll-top{
     position: fixed;
-    bottom: 1rem;
-    right:1rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     height: 5rem;
     width: 5rem;
-    font-size: 3rem;
-    font-weight:lighter;
-    background: var(--black);
+    font-size: 2.3rem;
+    font-weight: lighter;
+    background: var(--main-color);
     color: var(--white);
     border: 0.2rem solid var(--white);
     border-radius: 50%;
@@ -1190,23 +1339,29 @@ footer .content p span{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-  }
+    box-shadow: var(--shadow);
+}
 
-  .scroll-top:hover{
+.scroll-top:hover{
     background: var(--white);
-    color:var(--black);
-  }
-
+    color: var(--main-dark);
+}
   
 /*--------------------- 13- Scroll-Top (End) ---------------------*/
+
+
 /*------------------------------------------------------------------*/
 /* 1-line typing header on mobile: no wrapping, fluid font size     */
 /*------------------------------------------------------------------*/
 @media (max-width: 768px) {
     .home .content h1 {
-      /* allow the font to scale down, but never below 2.5rem or above 4rem */
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      white-space: nowrap;      /* absolutely no wrapping */
-      overflow-x: auto;         /* allow horizontal scroll if it *does* overflow */
+      font-size: clamp(3rem, 7vw, 4.6rem);
+      line-height: 1.2;
+      white-space: normal;
+      overflow-x: visible;
     }
-  }
+
+    .home .content h1 span{
+        font-size: clamp(4rem, 9vw, 5rem);
+    }
+}
