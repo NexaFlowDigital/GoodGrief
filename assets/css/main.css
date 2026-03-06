@@ -1499,3 +1499,22 @@ footer .content p span{
 .faq-item:focus-within .faq-front{
     opacity: 0;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+}
+
+.logo-img{
+    height:60px;
+    width:auto;
+}
+
+.logo-text h1{
+    margin:0;
+}
+
+.logo-text span{
+    display:block;
+}
+
