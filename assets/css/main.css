@@ -1420,3 +1420,82 @@ footer .content p span{
     min-width: 28rem;
     text-align: center;
 }
+.faq-section .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.faq-item{
+    height: 30rem;
+    background: var(--card-bg);
+    border: 0.1rem solid var(--border);
+    border-radius: 1.8rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-front{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, #fff, #f8f2f0);
+    z-index: 1;
+}
+
+.faq-front h4{
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.faq-item .faq-content{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem 2rem 1.8rem 2rem;
+    border-radius: 1.8rem;
+    background: rgba(87, 68, 70, 0.92);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transform: scale(0);
+    z-index: 2;
+}
+
+.faq-item .faq-content h4{
+    font-size: 2.1rem;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.faq-item .faq-content p{
+    font-size: 1.45rem;
+    color: #f6ecec;
+    line-height: 1.6;
+    margin-bottom: 0.7rem;
+}
+
+.faq-item:hover .faq-content,
+.faq-item:focus-within .faq-content{
+    transform: scale(1);
+}
+
+.faq-item:hover .faq-front,
+.faq-item:focus-within .faq-front{
+    opacity: 0;
+}
