@@ -1421,4 +1421,36 @@ footer .content p span{
 .pricing-box .btn{
     margin-top:1rem;
 }
+.pricing-highlight{
+    background: linear-gradient(135deg, #111, #1b1b1b);
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.pricing-container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.pricing-text h2{
+    font-size: 2.4rem;
+    color: var(--grey);
+    margin-bottom: 1rem;
+}
+
+.pricing-text h1{
+    font-size: 6rem;
+    color: var(--purple);
+    margin-bottom: 2rem;
+}
+
+.pricing-text p{
+    font-size: 1.7rem;
+    color: var(--white);
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
 
