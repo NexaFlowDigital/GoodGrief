@@ -1365,3 +1365,60 @@ footer .content p span{
         font-size: clamp(4rem, 9vw, 5rem);
     }
 }
+
+.pricing{
+    text-align:center;
+}
+
+.pricing-container{
+    display:flex;
+    justify-content:center;
+    padding:2rem 0;
+}
+
+.pricing-box{
+    max-width:50rem;
+    background:#222;
+    padding:4rem 3rem;
+    border-radius:.5rem;
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.pricing-box h3{
+    font-size:2rem;
+    color:var(--white);
+    margin-bottom:1rem;
+}
+
+.price{
+    font-size:5rem;
+    color:var(--purple);
+    margin-bottom:1.5rem;
+}
+
+.price span{
+    font-size:2rem;
+}
+
+.pricing-text{
+    font-size:1.6rem;
+    color:var(--grey);
+    line-height:1.6;
+    margin-bottom:2rem;
+}
+
+.pricing-features{
+    list-style:none;
+    margin-bottom:2rem;
+}
+
+.pricing-features li{
+    font-size:1.6rem;
+    color:var(--white);
+    padding:.5rem 0;
+}
+
+.pricing-box .btn{
+    margin-top:1rem;
+}
+
