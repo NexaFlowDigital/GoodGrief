@@ -525,34 +525,67 @@
     </script>
 
     <!-- Contact / Intake Form Script -->
-    <script>
-      (function(){
-        const FORM_ID  = 'contactUs-Form';
-        const BTN_ID   = 'submit';
-        const MSG_ID   = 'msg';
+   <script>
+  (function(){
+    const FORM_ID  = 'contactUs-Form';
+    const BTN_ID   = 'submit';
+    const MSG_ID   = 'msg';
+    const ENDPOINT = 'https://script.google.com/macros/s/AKfycby3RDcrpy5G-KGf4B-JWgV9IJ3ZGhilR1uync5Tgophoqj-v312UqXm8JsBQtFCs4Ya/exec';
 
-        const form   = document.getElementById(FORM_ID);
-        const submit = document.getElementById(BTN_ID);
-        const msg    = document.getElementById(MSG_ID);
+    const form   = document.getElementById(FORM_ID);
+    const submit = document.getElementById(BTN_ID);
+    const msg    = document.getElementById(MSG_ID);
 
-        if (!form || !submit || !msg) return;
+    if (!form || !submit || !msg) return;
 
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          submit.disabled = true;
-          submit.textContent = 'Please wait...';
-          msg.textContent = 'Your intake form is ready. Connect your form endpoint next.';
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-          setTimeout(() => {
-            submit.disabled = false;
-            submit.textContent = 'submit intake';
-          }, 1200);
+      submit.disabled = true;
+      submit.textContent = 'Please wait...';
+      msg.textContent = '';
+
+      const seasons = Array.from(form.querySelectorAll('input[name="season"]:checked'))
+        .map(el => el.value);
+
+      const supportStyle = form.querySelector('input[name="support_style"]:checked');
+
+      const payload = {
+        name: form.elements['name'].value.trim(),
+        contact_method: form.elements['contact_method'].value.trim(),
+        best_time: form.elements['best_time'].value.trim(),
+        bringing_you_here: form.elements['bringing_you_here'].value.trim(),
+        season: seasons,
+        overwhelming_areas: form.elements['overwhelming_areas'].value.trim(),
+        support_style: supportStyle ? supportStyle.value : '',
+        approach_gently: form.elements['approach_gently'].value.trim(),
+        anything_else: form.elements['anything_else'].value.trim()
+      };
+
+      try {
+        await fetch(ENDPOINT, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
         });
-      })();
-    </script>
+
+        msg.textContent = 'Thank you. Your intake form has been submitted.';
+        form.reset();
+      } catch (err) {
+        console.error(err);
+        msg.textContent = 'Something went wrong. Please try again.';
+      } finally {
+        submit.disabled = false;
+        submit.textContent = 'submit intake';
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
+
 
 
 
